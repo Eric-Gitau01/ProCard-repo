@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* UTILITY CLASSES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* GENERAL STYLE */
+
+html { scroll-behavior: smooth;}
+
+body {
+    font-family: "Roboto", serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #475569;
+    background-image: radial-gradient(whitesmoke, #475569);
+    font-size: 1.5rem;
+}
+
+header, footer {
+    position: sticky;
+    background-color: #1E293b;
+    color: whitesmoke;
+    text-align: center;
+}
+
+header {
+    top: 0;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+nav {
+    background-color: aliceblue;
+    padding: 0.5rem;
+    border-bottom: 2px solid black;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+   .divider {
+    display: block;
+    border-bottom: 2px solid white;
+    width: 100%;
+    margin-bottom: 0;
+   }
+
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+    font-size: 1.6rem;
+}
+nav a:active {
+    color: rgb(96, 83, 63);
+}
+
+
+.card {
+    scroll-margin-top: 8rem;
+    width: (100%, 350px);
+    background-color:  black;
+    border: 2px solid #ffff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+.card figure {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.card figcaption {
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+}
+.card img {
+    border: 5px double #f5f7fa;
+    border-radius: 50%;
+  
+}
+footer {
+    bottom: 0;
+}
+
+
+/* SMALL */
+
+@media  screen and (min-width: 576px) {
+    main {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem
+    }
+
+    h1 {
+        text-decoration: underline;
+    }
+
+   .card {
+    width: min(100%, 400px);
+   }
+
+   
+
+   .card:last-child {
+    order: -1;
+   }
+  
+
+}
+/* MEDIUM */
+
+@media  screen and (min-width: 758px) {
+        nav {
+            display: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-evenly;
+            row-gap: 10px;
+        }
+
+        .card {
+            width: min(100%, 325px);
+        }
+
+        .card figure {
+            flex-flow: column-reverse;
+        }
+        .card figcaption {
+            margin: 0.1rem 0;
+        }
+        .card p {
+            margin-top: 1rem;
+        }
+     
+}
+
+/* LARGE */
+
+@media  screen and (min-width: 992px) {
+    .card {
+        width: min(100%, 400px);
+        }
+        .card:nth-child(2) {
+        order: -1;
+        }
+        
+        }
+        /*
+}
+
+/* XL */
+
+@media  screen and (min-width: 1200px) {
+    .card {
+        width: min(calc(33% -1rem), 500px);
+       }
+}
+
+/*  MOBILE DEVICE LANDSCAPE */
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    h1 {
+     font-size: 1.5rem;
+ 
+    }
+ 
+    nav {
+     display: none;
+    }
+ 
+    main {
+     flex-flow: row nowrap;
+     justify-content: space-evenly;
+     align-items: stretch;
+    }
+ 
+    .card {
+     width: min(calc(33% - 0.25rem), 200px);
+    }
+ 
+    .card figcaption,
+    .card p {
+     font-size: 1.25rem;
+    }
+ } 
