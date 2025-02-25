@@ -69,13 +69,12 @@ nav {
    }
 
 
-nav a {
+nav a:any-link {
     text-decoration: none;
     color: black;
 }
 
-nav a:hover,
-nav a:focus {
+nav :is(a:hover,a:focus) {
     text-decoration: underline;
     font-size: 1.6rem;
 }
@@ -97,22 +96,38 @@ nav a:active {
 }
 .card figure {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column nowrap
 }
 .card figcaption {
     font-weight: bolder;
     font-size: 2rem;
     text-align: center;
 }
+
+.card figcaption::after {
+    content: '⭐';
+    display: block;
+}
 .card img {
     border: 5px double #f5f7fa;
     border-radius: 50%;
   
 }
+.card:target {
+    border:2px solid rebeccapurple;
+}
 footer {
     bottom: 0;
     
 }
+
+.card img[alt] {
+    border: 10px solid red;
+}
+
+/* .card:nth-child(2) {
+    background-color: papayawhip;
+} */
 
 
 /* SMALL */
